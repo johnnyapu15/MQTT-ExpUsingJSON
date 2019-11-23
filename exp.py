@@ -13,21 +13,22 @@ aId = 'areaId'
 v = 'value'
 v2 = 'value2'
 
-filename = './Jsons/test.json'
-sceneFile = open(filename, 'r')
-scene = json.load(sceneFile)
+
 
 mqttc = mqtt.Client()
 mqttc.connect(brok, port)
-
-t = 0
-for i, e in enumerate(scene['data']):
-    print(e)
-    if t >= e[ts]:
-        # play
-        mqttc.publish(e[topic], str(e[d]))
-    else:
-        time.sleep(e[ts] - t)
-        # play
-        mqttc.publish(e[topic], str(e[d]))
-    t = e[ts]
+def exp(filename):
+    filename = './Jsons/test.json'
+    sceneFile = open(filename, 'r')
+    scene = json.load(sceneFile)
+    t = 0
+    for i, e in enumerate(scene['data']):
+        print(e)
+        if t >= e[ts]:
+            # play
+            mqttc.publish(e[topic], str(e[d]))
+        else:
+            time.sleep(e[ts] - t)
+            # play
+            mqttc.publish(e[topic], str(e[d]))
+        t = e[ts]
