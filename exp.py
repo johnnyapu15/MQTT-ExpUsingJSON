@@ -41,7 +41,7 @@ def exp2(test):
     mqttc = mqtt.Client()
     mqttc.connect(brok, port)
     #kin-A-2
-    testVelo = 2.6 # m/s
+    testVelo = 4.2 # 4.2m/s ~= 15km/h
     d = test.split('-')
     building = d[0]
     exp(building + '-init',None,testVelo)
@@ -50,3 +50,4 @@ def exp2(test):
         exp(building + '-' + e,None,testVelo)
         statName += '-' + e
     exp('Fire', statName)
+#exp2('kin-A-1')
