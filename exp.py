@@ -17,13 +17,17 @@ v2 = 'value2'
 
 mqttc = mqtt.Client()
 mqttc.connect(brok, port)
-def exp(filename):
-    filename = './Jsons/test.json'
+def exp(filename, expName = "test", velo = 0):
+    filename = './Jsons/' + filename + '.json'
     sceneFile = open(filename, 'r')
     scene = json.load(sceneFile)
     t = 0
     for i, e in enumerate(scene['data']):
         print(e)
+        if (e[topic] == 'Fire'):
+            e[d]['messageId'] = expName
+        if (e[topic] == 'Test-mW'):
+            e[d]['value2'] = velo
         if t >= e[ts]:
             # play
             mqttc.publish(e[topic], str(e[d]))
@@ -32,3 +36,17 @@ def exp(filename):
             # play
             mqttc.publish(e[topic], str(e[d]))
         t = e[ts]
+def exp2(test):
+    global mqttc
+    mqttc = mqtt.Client()
+    mqttc.connect(brok, port)
+    #kin-A-2
+    testVelo = 2.6 # m/s
+    d = test.split('-')
+    building = d[0]
+    exp(building + '-init',None,testVelo)
+    statName = d[0]
+    for i, e in enumerate(d[1:]):
+        exp(building + '-' + e,None,testVelo)
+        statName += '-' + e
+    exp('Fire', statName)

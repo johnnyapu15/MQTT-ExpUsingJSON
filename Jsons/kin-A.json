@@ -8,7 +8,7 @@
         {
             "areaId":0,
             "value":15,
-            "value2":5
+            "value2":3.95
         }
     },
     {
@@ -18,7 +18,7 @@
         {
             "areaId":6,
             "value":15,
-            "value2":5
+            "value2":3.95
         }
     },
 
@@ -29,7 +29,7 @@
         {
             "areaId":7,
             "value":15,
-            "value2":5
+            "value2":3.95
         }
     }
 ]
