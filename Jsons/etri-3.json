@@ -1,0 +1,25 @@
+
+{
+"data":[
+    {
+        "timestamp":1,
+        "Topic":"mws/Notification/Periodic/SensingValueEvent",
+        "data":
+        {
+            "nodeId":1,
+            "sensorType":0,
+            "value":80
+        }
+    },
+    {
+        "timestamp":1,
+        "Topic":"mws/Notification/Periodic/SensingValueEvent",
+        "data":
+        {
+            "nodeId":2,
+            "sensorType":0,
+            "value":80
+        }
+    }
+]
+}

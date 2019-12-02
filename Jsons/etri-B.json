@@ -1,0 +1,36 @@
+
+{
+"data":[
+    {
+        "timestamp":1,
+        "Topic":"Test-mW",
+        "data":
+        {
+            "areaId":0,
+            "value":30,
+            "value2":3.95
+        }
+    },
+    {
+        "timestamp":1,
+        "Topic":"Test-mW",
+        "data":
+        {
+            "areaId":2,
+            "value":35,
+            "value2":3.95
+        }
+    },
+
+    {
+        "timestamp":1,
+        "Topic":"Test-mW",
+        "data":
+        {
+            "areaId":3,
+            "value":35,
+            "value2":3.95
+        }
+    }
+]
+}
